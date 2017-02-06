@@ -1,0 +1,528 @@
+#header {
+  //box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.25);
+  padding: $ggw 0;
+  z-index: 99;
+  .brand {
+    display: flex;
+    align-items: center;
+    .logo {
+      max-width: 200px;
+      height: auto;
+      margin-right: 10px;
+      //margin-bottom: 10px;
+      //float: left;
+      @include break-max($mob) {
+        float: none;
+      }
+    }
+    &.company-logo-only {
+      .logo {
+        display: block;
+        max-width: 180px;
+      }
+    }
+    &.company-name-only {
+      .logo {
+        display: none
+      }
+      //.company-name {
+      //  display: block
+      //}
+    }
+    &.company-logo-and-name {
+      .logo {
+        display: block;
+      }
+      //.company-name {
+      //  display: block
+      //}
+    }
+  }
+  .inner {
+    display: flex;
+    height: 100%;
+    width: 100%;
+  }
+  .nav-trigger {
+    display: none;
+    width: 50px;
+    height: 50px;
+    background: #5e7da7;
+    border-radius: 3px;
+    cursor: pointer;
+    float: right;
+    text-align: center;
+    .fa {
+      line-height: 50px;
+      font-size: 25px;
+      color: #ffffff;
+    }
+    @include break-max($tab) {
+      display: flex;
+      align-self: flex-end;
+      justify-content: center;
+    }
+  }
+  .nav-wrapper {
+    text-align: right;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    height: 100%;
+    padding: $ggw 0;
+    &.active {
+      display: flex;
+      flex-direction: column-reverse;
+      z-index: 100;
+      padding: 25px 0;
+      @include break-max($mob) {
+        padding: 30px 0;
+      }
+    }
+    #sb_menu {
+      //display: inline-block;
+      //vertical-align: middle;
+      margin-bottom: 0;
+      position: relative;
+      @include break-max($tab) {
+        display: block;
+      }
+      .close-btn {
+        display: none;
+        text-align: right;
+        padding: 0 50px;
+        cursor: pointer;
+      }
+      &.active {
+        display: block;
+        z-index: 100;
+        padding: 20px 0 10px;
+        .close-btn {
+          display: block;
+        }
+      }
+      .nav {
+        text-align: right;
+        float: left;
+        @include break-max($tab) {
+          float: none;
+        }
+        li {
+          display: inline-block;
+          padding: 0 10px;
+          text-transform: uppercase;
+          @include break-max($tab) {
+            display: table;
+            margin: 0 auto 20px;
+            text-align: center;
+            &:last-child {
+              margin-bottom: 0;
+            }
+          }
+          a {
+            text-decoration: none;
+            border-bottom: 3px solid;
+            border-bottom-color: transparent;
+            padding-bottom: 3px;
+            @include break-max($tab) {
+              font-size: 18px;
+            }
+            //&:hover {
+            //  background-color: inherit;
+            //}
+          }
+          &.btn {
+            background: #33bb60;
+            font-size: 16px;
+            &:hover {
+              background-color: #33bb60;
+            }
+            a {
+              display: block;
+              padding: 10px 5px;
+              color: #ffffff;
+              border: 0 !important;
+              &:hover {
+                border: inherit;
+              }
+            }
+          }
+        }
+      }
+    }
+    .items-wrapper {
+      //display: flex;
+      //justify-content: flex-end;
+      //align-items: center;
+      @include break-max($tab) {
+        text-align: center;
+        padding: 0 0 20px;
+        //justify-content: center;
+        //
+      }
+      .nav-item {
+        display: inline-block;
+        vertical-align: middle;
+        margin-left: 6px;
+        z-index: 20;
+        @include break-max($tab) {
+          margin: 0 5px;
+        }
+        .item-container {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          width: 40px;
+          line-height: 40px;
+          height: 40px;
+          border-radius: 50%;
+          //border: 1px solid #494949;
+          border: 1px solid transparent;
+          text-align: center;
+          position: relative;
+          & > img {
+
+          }
+        }
+        .full-info {
+          display: none;
+          background: #ffffff;
+          position: absolute;
+          //max-width: 400px;
+          //width: 100%;
+          box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.5);
+          border-radius: 3px;
+          margin-top: 15px;
+          right: 0;
+          box-sizing: content-box;
+          @include break-max($mob) {
+            max-width: 95% !important;
+          }
+          &.active {
+            //display: inline-block;
+            display: block;
+            z-index: 99;
+            @include break-max($tab) {
+              display: block;
+              z-index: 99;
+              width: 90% !important;
+              left: 0;
+              right: 0;
+              margin: 20px auto 0;
+              box-sizing: border-box;
+            }
+          }
+          &:before {
+            content: "";
+            background: url("#{$img-path-general}user-info-triangle.png") no-repeat scroll;
+            width: 20px;
+            height: 20px;
+            position: absolute;
+            top: -10px;
+            right: 10px;
+            @include break-max($tab) {
+              //left: 0;
+              //right: 0;
+              //margin: 0 auto;
+              display: none;
+            }
+          }
+        }
+        &#sb_multiple_book_cart {
+          .cart-container {
+            position: relative;
+            @include break-max($tab) {
+              position: inherit;
+            }
+            .cart {
+              position: relative;
+              //float: left;
+              cursor: pointer;
+              .fa {
+                font-size: 16px;
+                color: #ffffff;
+              }
+              .counter {
+                position: absolute;
+                bottom: -3px;
+                padding: 0px 8px;
+                border-radius: 12px;
+                color: #fff;
+                font-size: 11px;
+                height: 20px;
+                line-height: 20px;
+                min-width: 5px;
+                text-align: center;
+                left: 25px;
+                background-color: #5a3afd;
+                //margin-top: 12px;
+              }
+              @include break-max($tab) {
+                float: none;
+              }
+            }
+            .full-info {
+              width: 400px;
+              @include break-max($mob) {
+                max-height: 325px;
+                overflow: auto;
+              }
+              .filled {
+                display: block;
+              }
+              .empty {
+                display: block;
+                text-align: center;
+                img {
+                  margin: 10px 0;
+                }
+                .txt {
+                  font-size: 25px;
+                  color: #ececec;
+                  text-transform: uppercase;
+                  font-weight: bold;
+                  margin: 5px 0;
+                }
+              }
+            }
+          }
+        }
+        &#sb_client_info {
+          .login-container {
+            position: relative;
+            @include break-max($tab) {
+              position: inherit;
+            }
+            .avatar {
+              cursor: pointer;
+              .counter {
+                position: absolute;
+                bottom: 0;
+                padding: 0px 8px;
+                border-radius: 12px;
+                color: #fff;
+                font-size: 11px;
+                height: 18px;
+                line-height: 18px;
+                min-width: 5px;
+                text-align: center;
+                left: 50px;
+              }
+              img {
+                width: 100%;
+                border-radius: 50%;
+                object-fit: cover;
+                height: 40px;
+              }
+            }
+            .full-info {
+              width: 400px;
+              #sb_login_form {
+                display: block;
+                width: 100%;
+                text-align: left;
+                .is-logged {
+                  text-align: center;
+                  .cap {
+                    font-size: 18px;
+                    margin-bottom: 10px;
+                    b {
+                      font-size: 24px;
+                      margin-left: 5px;
+                    }
+                  }
+                  .bar {
+                    width: 100%;
+                    text-align: center;
+                    .btn {
+                      display: inline-block;
+                      vertical-align: top;
+                      white-space: normal;
+                      padding: 5px 20px;
+                      margin: 5px;
+                      color: #ffffff;
+                      font-size: 16px;
+                      text-transform: capitalize;
+                      border-radius: 3px;
+                      a {
+                        color: #ffffff;
+                        text-decoration: none;
+                      }
+                    }
+                  }
+                }
+                .not-logged {
+                  .inputs {
+                    input {
+                      //border: 1px solid #d0d0d0;
+                      border-radius: 2px;
+                      background-color: #f6f6f6;
+                      //max-width: 238px;
+                      width: 100%;
+                      height: 35px;
+                      padding: 0 15px;
+                    }
+                    .txt {
+                      margin-bottom: 5px;
+                    }
+                  }
+                  .bar {
+                    text-align: right;
+                    @include break-max($tab) {
+                      text-align: center;
+                    }
+                    .btn {
+                      display: inline-block;
+                      color: #fff;
+                      height: 40px;
+                      padding: 0 20px;
+                      text-align: right;
+                      font-size: 18px;
+                      margin-top: 13px;
+                    }
+                  }
+                  .social {
+                    text-align: right;
+                    @include break-max($tab) {
+                      text-align: center;
+                    }
+                    .brand {
+                      justify-content: inherit;
+                      flex-direction: column;
+                      align-items: flex-end;
+                      @include break-max($tab) {
+                        display: block;
+                        margin-top: 20px;
+                        a {
+                          display: inline-block;
+                          vertical-align: top;
+                        }
+                      }
+                    }
+                    .txt {
+                      position: absolute;
+                      top: 50%;
+                      transform: translateY(-50%);
+                      vertical-align: middle;
+                      //font-weight: bold;
+                      //font-size: 22px;
+                      //margin-right: 15px;
+                      margin-left: 15px;
+                      text-transform: uppercase;
+                      @include break-max($tab) {
+                        display: none;
+                      }
+                    }
+                    a {
+                      display: block;
+                      margin-bottom: 14px;
+                      &:last-child {
+                        margin-bottom: 0;
+                      }
+                    }
+                  }
+                }
+                .bookings {
+                  padding: 20px 0 45px;
+                  li {
+                    display: block;
+                    border-top: 2px solid #e0e0e0;
+                    padding-top: 30px;
+                    padding-bottom: 20px;
+                    &:last-child {
+                      border-bottom: 2px solid #e0e0e0;
+                    }
+                    .caption {
+                      @include clearfix();
+                      margin-bottom: 15px;
+                      .title {
+                        float: left;
+                        font-size: 22px;
+                        font-weight: bold;
+                      }
+                      .remove-btn {
+                        float: right;
+                        font-size: 12px;
+                        color: #a64c4c;
+                        cursor: pointer;
+                      }
+                    }
+                    .overview {
+                      width: 100%;
+                      tr {
+                        & > td {
+                          vertical-align: top;
+                          padding-bottom: 10px;
+                        }
+                        .cap {
+                          line-height: $bs-line-height;
+                          font-size: 17px;
+                        }
+                        .txt {
+                          font-weight: 600;
+                          font-size: 17px;
+                          padding-left: 15px;
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+        &#book-btn {
+          .book-btn-container {
+            position: relative;
+            .item-container {
+              background: #33ba5f;
+              img {
+                max-width: 18px;
+              }
+            }
+            @include break-max($tab) {
+              position: inherit;
+            }
+          }
+        }
+        .bottom-block {
+          text-align: center;
+          margin-top: 30px;
+          .btn {
+            position: relative;
+            border-radius: 2px;
+            max-width: 243px;
+            width: 100%;
+            margin: 10px auto 0;
+            a {
+              color: #ffffff;
+              text-decoration: none;
+              font-size: 25px;
+              display: block;
+              line-height: 45px;
+            }
+            &:after {
+              content: "";
+              background-image: url("#{$img-path-general}btn-book.png");
+              //width: 30px;
+              //height: 27px;
+            }
+          }
+        }
+      }
+
+    }
+    @include break-max($tab) {
+      display: none;
+      position: fixed;
+      max-width: 460px;
+      width: 95%;
+      left: 0;
+      right: 0;
+      margin: 30px auto;
+      //top: 50px;
+      background: #ffffff;
+      height: inherit;
+    }
+  }
+}
