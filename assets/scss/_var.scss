@@ -1,0 +1,39 @@
+//FONTS
+$ft-basic: 16px;
+//Target Size / Base Size = Rem Value
+$heading-1: 25px;
+$heading-2: 20px;
+$heading-3: 18px;
+
+//Titles
+$ft-big: ($heading-1 / $ft-basic)#{'rem'};
+$ft-medium: ($heading-2 / $ft-basic)#{'rem'};
+$ft-small: ($heading-3 / $ft-basic)#{'rem'};
+
+//Text
+$ft-txt: $ft-basic;
+
+
+//SCREEN SIZES
+$hd: 1921px;
+$lap: 1366px;
+$tab: 1024px;
+$vert-tab: 991px;
+$mob: 767px;
+
+$bs-line-height: 1.42857;
+
+//IMAGE PATH
+//usage #{$img-path}
+$img-path-theme: "../src/img/";
+$img-path-general: "../../assets/img/";
+
+//TRANSITION ANIMATION
+$opt: .3s ease-in-out;
+
+$av-width: 75px;
+
+$section-height: 380px;
+
+$purple-color: #5a3afd;
+$dark-purple: #28243c;

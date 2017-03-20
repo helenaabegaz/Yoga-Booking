@@ -1,0 +1,538 @@
+//Shortened border-radius
+@mixin br($radius: $default-radius) {
+  -webkit-border-radius: $radius;
+  -moz-border-radius: $radius;
+  border-radius: $radius;
+}
+
+//Shortened Background
+@mixin bg($img-name, $repeat: n, $posion: cc, $cover: n) {
+  $r: null;
+  $p: null;
+  @if $repeat == n {
+    $r: no-repeat;
+  } @else if $repeat == r {
+    $r: repeat;
+  } @else if $repeat == rx {
+    $r: repeat-x;
+  } @else if $repeat == ry {
+    $r: repeat-y;
+  }
+  @if $posion == cc {
+    $p: center;
+  } @else if $posion == ct {
+    $p: center top;
+  } @else if $posion == cb {
+    $p: center bottom;
+  } @else if $posion == lc {
+    $p: left center;
+  } @else if $posion == rc {
+    $p: right center;
+  } @else {
+    $p: $posion;
+  }
+  background: url($img-path + $img-name + ".png") $r $p;
+}
+
+//Shortened Padding
+@mixin pd($var: 0) {
+  padding: $var;
+}
+
+//Shortened Margin
+@mixin m($var: 0) {
+  margin: $var;
+}
+
+//Shortened Position
+@mixin p($top, $left: "", $bottom: "", $right: "") {
+  @if $top != "" {
+    top: $top + px;
+  }
+  @if $left != "" {
+    left: $left + px;
+  }
+  @if $bottom != "" {
+    bottom: $bottom + px;
+  }
+  @if $right != "" {
+    right: $right + px;
+  }
+}
+
+@mixin ps {
+  position: static;
+}
+
+@mixin pa {
+  position: absolute;
+}
+
+@mixin pf {
+  position: fixed;
+}
+
+@mixin pr {
+  position: relative;
+}
+
+//Shortened Transition
+@mixin tr($t: $default-transition) {
+  -webkit-transition: $t;
+  -moz-transition: $t;
+  -ms-transition: $t;
+  -o-transition: $t;
+  transition: $t;
+}
+
+@mixin line-count($font, $rows) {
+  $font: $font; //px
+  $rows: $rows;
+  $_line-h: ($font + 1);
+  $_height: ($_line-h * $rows);
+
+  font-size: $font;
+  height: $_height;
+  line-height: $_line-h;
+  overflow: hidden;
+}
+
+@mixin break-avoid() {
+  -webkit-column-break-inside: avoid;
+  -moz-column-break-inside: avoid;
+  -moz-page-break-inside: avoid;
+  -o-column-break-inside: avoid;
+  -ms-column-break-inside: avoid;
+  column-break-inside: avoid;
+  break-inside: avoid-column;
+  overflow: hidden;
+}
+
+ul, li {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+img, iframe {
+  max-width: 100%;
+  height: auto;
+}
+
+.col-xs-5ths,
+.col-sm-5ths,
+.col-md-5ths,
+.col-lg-5ths {
+  position: relative;
+  min-height: 1px;
+  //padding-right: 15px;
+  //padding-left: 15px;
+  padding-left: $grid-gutter-width / 2;
+  padding-right: $grid-gutter-width / 2;
+}
+
+.col-xs-5ths {
+  width: 20%;
+  float: left;
+}
+
+@media (min-width: 768px) {
+  .col-sm-5ths {
+    width: 20%;
+    float: left;
+  }
+}
+
+@media (min-width: 992px) {
+  .col-md-5ths {
+    width: 20%;
+    float: left;
+  }
+}
+
+@media (min-width: 1200px) {
+  .col-lg-5ths {
+    width: 20%;
+    float: left;
+  }
+}
+
+.row.no-gutter {
+  margin-left: 0;
+  margin-right: 0;
+}
+
+.row.no-gutter [class*='col-'] {
+  padding-right: 0;
+  padding-left: 0;
+}
+
+.row.vcenter > [class*='col-'] {
+  display: inline-block;
+  vertical-align: middle;
+  float: none
+}
+
+.row-eq-height {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  &:after,
+  &:before {
+    display: flex;
+  }
+  & > [class*="col-"] {
+    display: flex;
+    flex-direction: column;
+    & > .flex-wrapper {
+      display: flex;
+      flex: 1 0 auto;
+      flex-direction: column;
+    }
+  }
+}
+
+.row-eq-height-xs {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  &:after,
+  &:before {
+    display: flex;
+  }
+  & > [class*="col-"] {
+    display: flex;
+    flex-direction: column;
+    & > .flex-wrapper {
+      display: flex;
+      flex: 1 0 auto;
+      flex-direction: column;
+      @media only screen and (max-width: 767px) {
+        display: block;
+      }
+    }
+  }
+  @media only screen and (max-width: 767px) {
+    display: block;
+    & > [class*="col-"] {
+      display: block;
+    }
+  }
+}
+
+
+#text-content .text > ul {
+  list-style-type: disc;
+  margin-left: 20px;
+}
+
+.half-left {
+  width: 50%;
+  float: left;
+  position: relative;
+}
+
+.half-right {
+  width: 50%;
+  float: right;
+  position: relative;
+}
+
+.left {
+  float: left;
+}
+
+.right {
+  float: right;
+}
+
+.center {
+  display: inline-block;
+  margin: 0 auto;
+}
+
+.txt-right {
+  text-align: right;
+}
+
+.txt-left {
+  text-align: left;
+}
+
+.txt-center {
+  text-align: center;
+}
+
+.btn.custom {
+  border-radius: 0;
+  padding: 0;
+  a {
+    text-decoration: none;
+  }
+}
+
+@mixin flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+@mixin centerY {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+@mixin centerX {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+@mixin bg($url) {
+  background: url($url) no-repeat center center;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+@mixin ft_aws-pseudo($font) {
+  &:after {
+    content: "$font";
+    font-family: FontAwesome;
+    font-style: normal;
+    font-weight: normal;
+    text-decoration: inherit;
+  }
+}
+
+@mixin font-aw($font) {
+  font: normal normal normal $font/1 FontAwesome;
+}
+
+@mixin placeholder-color($color) {
+  &::-webkit-input-placeholder {
+    color: $color;
+  }
+  &:-moz-placeholder {
+    color: $color;
+    opacity: 1;
+  }
+  &::-moz-placeholder {
+    color: $color;
+    opacity: 1;
+  }
+  &:-ms-input-placeholder {
+    color: $color;
+  }
+  &:placeholder-shown { /* Standard (https://drafts.csswg.org/selectors-4/#placeholder) */
+    color: $color;
+  }
+}
+
+@mixin reset-btn() {
+  overflow: visible; // Shrinkwrap the text in IE7-
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font: inherit; // Inherit font settings (doesn’t work in IE7-)
+  line-height: normal; // Override line-height to avoid spacing issues
+  cursor: pointer; // Buttons don’t make the cursor change in all browsers
+  -moz-user-select: text; // Make button text selectable in Gecko
+
+  /* Remove mystery padding in Gecko browsers.
+   * See https://bugzilla.mozilla.org/show_bug.cgi?id=140562
+   */
+  &::-moz-focus-inner {
+    padding: 0;
+    border: 0;
+  }
+}
+
+@mixin opacity($opacity) {
+  opacity: $opacity;
+  $opacity-ie: $opacity * 100;
+  filter: alpha(opacity=$opacity-ie); //IE8
+}
+
+@mixin text-truncate {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+@mixin text-truncate-row {
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+@mixin multiLineEllipsis($lineHeight: 1.2em, $lineCount: 1) {
+  overflow: hidden;
+  position: relative;
+  line-height: $lineHeight;
+  max-height: $lineHeight * $lineCount;
+  text-align: left;
+  margin-right: -1em;
+  padding-right: 1em;
+}
+
+@mixin fill {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+@mixin break-min($point) {
+  @media (min-width: $point) {
+    @content;
+  }
+}
+
+@mixin break-max($point) {
+  @media (max-width: $point) {
+    @content;
+  }
+}
+
+//for default state
+@mixin tr-hide($speed) {
+  transition: all $speed ease-in-out;
+  opacity: 0;
+  height: 0;
+  overflow: hidden;
+  visibility: hidden;
+  z-index: -1;
+}
+
+//for active state
+@mixin tr-show() {
+  opacity: 1;
+  height: auto;
+  z-index: 999;
+  overflow: inherit;
+  visibility: visible;
+}
+
+@function lt-spacing($font-size, $ps-tracking) {
+  @return $ps-tracking * $font-size / 1000;
+}
+
+@function by($num, $percent) {
+  @return $num * $percent / 100;
+}
+
+@mixin triangle($direction, $size: 6px, $color: #222) {
+  content: '';
+  display: block;
+  position: absolute;
+  height: 0;
+  width: 0;
+  @if ($direction == 'up') {
+    border-bottom: $size solid $color;
+    border-left: 1/2*$size solid transparent;
+    border-right: 1/2*$size solid transparent;
+  } @else if ($direction == 'down') {
+    border-top: $size solid $color;
+    border-left: 1/2*$size solid transparent;
+    border-right: 1/2*$size solid transparent;
+  } @else if ($direction == 'left') {
+    border-top: 1/2*$size solid transparent;
+    border-bottom: 1/2*$size solid transparent;
+    border-right: $size solid $color;
+  } @else if ($direction == 'right') {
+    border-top: 1/2*$size solid transparent;
+    border-bottom: 1/2*$size solid transparent;
+    border-left: $size solid $color;
+  }
+}
+
+.row-no-padding > [class*="col-"] {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+/*
+  Font face
+  usage /src/
+*/
+@mixin font-face($font-family, $file-path, $font-weight, $font-style) {
+  @font-face {
+    font-family: $font-family;
+    src: //url('#{$file-path}.eot'),
+            //url('#{$file-path}.eot?#iefix') format('embedded-opentype'),
+            //url('#{$file-path}.woff') format('woff'),
+            url('#{$file-path}.otf') format('truetype');
+    //url('#{$file-path}.svg##{$font-family}') format('svg');
+    font-weight: $font-weight;
+    font-style: $font-style;
+  }
+}
+
+/*
+  Long Shadow Mixin
+  @link http://codepen.io/awesomephant/pen/mAxHz
+  @usage @include long-shadow($type: text, $color: indigo, $length: 50, $fadeout: false, $skew: true, $direction: right);
+*/
+@mixin long-shadow($type, $color, $length, $fadeout: true, $skew: false, $direction: right) {
+  $shadow: '';
+  @if $skew == false or $type == text {
+    @if $direction == right {
+      @for $i from 0 to $length - 1 {
+        $shadow: $shadow + $i + 'px ' + $i + 'px 0 ' + $color + ',';
+      }
+    }
+    @if $direction == left {
+      @for $i from 0 to $length - 1 {
+        $shadow: $shadow + $i * -1 + 'px ' + $i + 'px 0 ' + $color + ',';
+      }
+    }
+  }
+
+  @if $fadeout == true {
+    @for $i from 1 to $length - 1 {
+      @if $type == text or $skew == false {
+        @if $direction == right {
+          $shadow: $shadow + $i + 'px ' + $i + 'px 0 ' +       rgba($color, 1 - $i / $length) + ',';
+        }
+        @if $direction == left {
+          $shadow: $shadow + $i * -1 + 'px ' + $i + 'px 0 ' +       rgba($color, 1 - $i / $length) + ',';
+        }
+      }
+      @if ($type == box) and $skew == true {
+        @if $direction == right {
+          $shadow: $shadow + $i + 'px ' + $i + 'px 0 ' + $i * .2 + 'px ' + rgba($color, 1 - $i / $length) + ',';
+        }
+        @if $direction == left {
+          $shadow: $shadow + $i * -1 + 'px ' + $i + 'px 0 ' + $i * .2 + 'px ' + rgba($color, 1 - $i / $length) + ',';
+        }
+      }
+    }
+    $shadow: $shadow + $length + 'px ' + $length + 'px 0 ' + rgba($color, 0);
+  }
+  @if $fadeout == false {
+    @if $skew == true and ( $type == box ) {
+      @for $i from 0 to $length - 1 {
+        $shadow: $shadow + $i + 'px ' + $i + 'px 0 ' + $i * .1 + 'px ' + $color + ',';
+      }
+    }
+    $shadow: $shadow + $length + 'px ' + $length + 'px 0 ' + rgba(0,0,0,0);
+  }
+  $shadow: unquote($shadow);
+  @if $type == 'box' {
+    box-shadow: $shadow;
+  }
+  @if $type == 'text' {
+    text-shadow: $shadow;
+  }
+}

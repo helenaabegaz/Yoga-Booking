@@ -1,0 +1,72 @@
+/*
+Flaticon icon font: Flaticon
+Creation date: 26/10/2016 10:43
+*/
+
+$font-path: "../../fonts/";
+
+.fi {
+  display: inline-block;
+  font-family: "Flaticon";
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  line-height: 1;
+  text-decoration: inherit;
+  text-rendering: optimizeLegibility;
+  text-transform: none;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  font-smoothing: antialiased;
+}
+
+
+.flaticon-add:before { content: "\f100"; }
+.flaticon-cancel:before { content: "\f101"; }
+.flaticon-check:before { content: "\f102"; }
+.flaticon-checked:before { content: "\f103"; }
+.flaticon-chronometer:before { content: "\f104"; }
+.flaticon-clock:before { content: "\f105"; }
+.flaticon-commerce:before { content: "\f106"; }
+.flaticon-expand-button:before { content: "\f107"; }
+.flaticon-folder:before { content: "\f108"; }
+.flaticon-gps:before { content: "\f109"; }
+.flaticon-interface:before { content: "\f10a"; }
+.flaticon-internet:before { content: "\f10b"; }
+.flaticon-location:before { content: "\f10c"; }
+.flaticon-multiple-users-silhouette:before { content: "\f10d"; }
+.flaticon-people:before { content: "\f10e"; }
+.flaticon-phone-receiver:before { content: "\f10f"; }
+.flaticon-print-button:before { content: "\f110"; }
+.flaticon-refresh:before { content: "\f111"; }
+.flaticon-service:before { content: "\f112"; }
+.flaticon-share:before { content: "\f113"; }
+.flaticon-social:before { content: "\f114"; }
+.flaticon-star:before { content: "\f115"; }
+.flaticon-star-1:before { content: "\f116"; }
+.flaticon-technology:before { content: "\f117"; }
+
+$font-Flaticon-add: "\f100";
+$font-Flaticon-cancel: "\f101";
+$font-Flaticon-check: "\f102";
+$font-Flaticon-checked: "\f103";
+$font-Flaticon-chronometer: "\f104";
+$font-Flaticon-clock: "\f105";
+$font-Flaticon-commerce: "\f106";
+$font-Flaticon-expand-button: "\f107";
+$font-Flaticon-folder: "\f108";
+$font-Flaticon-gps: "\f109";
+$font-Flaticon-interface: "\f10a";
+$font-Flaticon-internet: "\f10b";
+$font-Flaticon-location: "\f10c";
+$font-Flaticon-multiple-users-silhouette: "\f10d";
+$font-Flaticon-people: "\f10e";
+$font-Flaticon-phone-receiver: "\f10f";
+$font-Flaticon-print-button: "\f110";
+$font-Flaticon-refresh: "\f111";
+$font-Flaticon-service: "\f112";
+$font-Flaticon-share: "\f113";
+$font-Flaticon-social: "\f114";
+$font-Flaticon-star: "\f115";
+$font-Flaticon-star-1: "\f116";
+$font-Flaticon-technology: "\f117";

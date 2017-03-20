@@ -1,15 +1,29 @@
 <section id="content-view">
-    <div class="container-fluid column">
+    <div class="container-fluid">
         {{#ifCond (getThemeOption 'main_page_mode') '==' 'default'}}
         <div class="row row-eq-height-xs default">
-            <div class="tab col-sm-4 col-md-3">
-                {{> mainPageWorkingHoursPart}}
-            </div>
-            <div class="tab col-sm-4 col-md-6">
-                {{> mainPageAboutUsPart}}
-            </div>
-            <div class="tab col-sm-4 col-md-3">
-                {{> mainPageContactsPart}}
+            <div id="about-us" class="about-container">
+                <div class="column">
+                    <div class="section-descr col-md-7 col-md-offset-5 col-sm-offset-4">
+                        <div class="section-name">
+                            About us
+                        </div>  
+                        <div class="subtitle">
+                            And working hours
+                        </div>
+                    </div>
+                    <div class="tab col-sm-4 col-md-5 hours-container">
+                        {{> mainPageWorkingHoursPart}}
+                    </div>
+                    <div class="tab col-sm-8 col-md-7 descr-container">
+                        {{> mainPageAboutUsPart}}
+                    </div>
+                    <!--
+                    <div class="tab col-sm-4 col-md-3">
+                        {{> mainPageContactsPart}}
+                    </div>
+                    -->
+                </div>
             </div>
         </div>
         {{/ifCond}}
@@ -64,7 +78,7 @@
         
     </div>
     {{#ifCond skip_address '!=' true}}
-        <div class="map-wrapper">
+        <div id="contact-details" class="map-wrapper">
             <div class="container-fluid">
                 <div class="row">
                     <div class="tab col-sm-12" id="sb_map">
@@ -73,16 +87,18 @@
                                     src="https://www.google.com/maps/embed/v1/place?key={{map_key}}&q={{lat}},{{lng}}"
                                     allowfullscreen>
                             </iframe>
-                            <div class="contact-info">
-                                <div class="contact-inner">
-                                    <div class="section-name">
-                                        Contact us
-                                    </div>
-                                    <div class="info">
-                                        <span class="contact-nr">+1 046 665 44 54</span>
-                                        <span class="contact-nr">+1 046 665 66 27</span>
-                                        <span class="email">contact@google.com</span>
-                                        <span class="address">Gates-ave 126b Brooklyn nEW yORK usa</span>
+                            <div class="column">
+                                <div class="contact-info">
+                                    <div class="contact-inner">
+                                        <div class="section-name">
+                                            Contact us
+                                        </div>
+                                        <div class="info">
+                                            <span class="contact-nr">+1 046 665 44 54</span>
+                                            <span class="contact-nr">+1 046 665 66 27</span>
+                                            <span class="email">contact@google.com</span>
+                                            <span class="address">Gates-ave 126b Brooklyn nEW yORK usa</span>
+                                        </div>
                                     </div>
                                 </div>
                             </div>

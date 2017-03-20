@@ -1,0 +1,418 @@
+//@sb_base_color: #33bb60;
+
+//@body_bg_color: #fdfdfd;
+
+//@booking_nav_bg_color: #d1e9c6;
+
+//@dark_font_color: #494949;
+
+@grey: #81889a;
+
+@black: #464646;
+
+//@dark_font_color: #494949;
+
+//@light_font_color: #fff;
+
+//@btn_color_1: #5e7da7;
+
+//MAIN COLORS
+@booked: #dad2ce;
+@active: #d1e9c6;
+//@reserved: test
+@available: #d3e0f1;
+@border_slot_color: #e9e9e9;
+
+body {
+  background: @body_bg_color;
+  color: @dark_font_color;
+}
+
+html {
+  &::-webkit-scrollbar {
+    _background-color: @body_bg_color;
+  }
+}
+
+#sb_multiple_book_cart {
+  .counter {
+    background: @sb_base_color;
+    color: contrast(@sb_base_color, @dark_font_color, @light_font_color);
+    //color: #ffffff;
+    a {
+      //color: #fffffe;
+      color: contrast(@sb_base_color, @dark_font_color, @light_font_color);
+    }
+  }
+}
+
+#sb_menu a {
+  color: contrast(@body_bg_color, @dark_font_color, @light_font_color);
+  @media only screen and (max-width: 1024px) {
+    color: @black;
+  }
+}
+
+#main #main-buttons .company-name {
+  color: contrast(@body_bg_color, @dark_font_color, @light_font_color);
+}
+
+.btn.book-btn {
+  background: @sb_base_color;
+  color: contrast(@sb_base_color, @dark_font_color, @light_font_color);
+  //color: #ffffff;
+  a {
+    color: contrast(@sb_base_color, @dark_font_color, @light_font_color);
+    //color: #fffffe;
+  }
+}
+
+.calendar-popup li .btn {
+  background: @btn_color_1;
+  color: contrast(@sb_base_color, @dark_font_color, @light_font_color);
+  a {
+    color: contrast(@sb_base_color, @dark_font_color, @light_font_color);
+    //color: #fffffe;
+  }
+}
+
+
+#sb-timeline #steps-nav #menu-active-bg {
+  background: @booking_nav_bg_color;
+}
+
+#sb-timeline #steps-nav li:not(.passed) {
+  .title-small {
+    color: contrast(@body_bg_color, @dark_font_color, @light_font_color);
+  }
+}
+
+#sb-timeline #steps-nav li:first-child, #sb-timeline #steps-nav li.passed, #sb-timeline #steps-nav li.passed + li:not(.passed) {
+  background: @booking_nav_bg_color;
+  .title-small {
+    color: contrast(@booking_nav_bg_color, @dark_font_color, @light_font_color);
+  }
+}
+
+#sb-timeline #steps-nav li:first-child:after {
+  background: @body_bg_color;
+
+  border-top-color: @body_bg_color;
+  border-left-color: @booking_nav_bg_color;
+  border-bottom-color: @body_bg_color;
+}
+
+#sb-timeline #steps-nav li.passed + li:not(.passed):after {
+  background: @body_bg_color;
+
+  border-top-color: @body_bg_color;
+  border-left-color: @booking_nav_bg_color;
+  border-bottom-color: @body_bg_color;
+}
+
+//#sb_booking_info li.passed {
+//  background-color: @booking_nav_bg_color;
+//}
+
+#footer .copyright {
+  color: contrast(@body_bg_color, @dark_font_color, @light_font_color);
+}
+
+//button with second color
+.current-booking-info .sb-book {
+  background: @btn_color_1;
+  color: contrast(@btn_color_1, @dark_font_color, @light_font_color);
+  //color: #ffffff;
+  a {
+    color: contrast(@btn_color_1, @dark_font_color, @light_font_color);
+    //color: #ffffff;
+  }
+}
+
+//.custom-form .btn {
+//  //background: @btn_color_1;
+//  color: contrast(@btn_color_1, @dark_font_color, @light_font_color);
+//  //color: #ffffff;
+//  a {
+//    color: contrast(@btn_color_1, @dark_font_color, @light_font_color);
+//    //color: #ffffff;
+//  }
+//}
+
+.current-booking-info .btn.sb_book_again {
+  background: @btn_color_1;
+  color: contrast(@btn_color_1, @dark_font_color, @light_font_color);
+  //color: #ffffff;
+  a {
+    color: contrast(@btn_color_1, @dark_font_color, @light_font_color);
+    //color: #ffffff;
+  }
+}
+
+//.bar-with-btn .btn {
+//  background: @btn_color_1;
+//  color: contrast(@btn_color_1, @dark_font_color, @light_font_color);
+//  //color: #ffffff;
+//  a {
+//    color: contrast(@btn_color_1, @dark_font_color, @light_font_color);
+//    //color: #ffffff;
+//  }
+//}
+
+#header .nav-wrapper .items-wrapper .nav-item#book-btn .book-btn-container .item-container {
+  background: @sb_base_color;;
+}
+
+#main #main-content #sb_content #client-profile-preview .btn {
+  background: @btn_color_1;
+  color: contrast(@btn_color_1, @dark_font_color, @light_font_color);
+  //color: #ffffff;
+  a {
+    color: contrast(@btn_color_1, @dark_font_color, @light_font_color);
+    //color: #ffffff;
+  }
+}
+
+#header .items-wrapper .nav-item#sb_client_info .login-container .full-info #sb_login_form .not-logged .bar .btn {
+  background: @btn_color_1;
+  color: contrast(@btn_color_1, @dark_font_color, @light_font_color);
+  //color: #ffffff;
+  a {
+    color: contrast(@btn_color_1, @dark_font_color, @light_font_color);
+    //color: #ffffff;
+  }
+}
+
+#main #main-buttons .btn.custom {
+  background: @btn_color_1;
+  color: contrast(@btn_color_1, @dark_font_color, @light_font_color);
+  //color: #ffffff;
+  a {
+    color: contrast(@btn_color_1, @dark_font_color, @light_font_color);
+    //color: #ffffff;
+  }
+}
+
+#main #main-buttons .btn.map {
+  background: @btn_color_1;
+  color: contrast(@btn_color_1, @dark_font_color, @light_font_color);
+  //color: #ffffff;
+  a {
+    color: contrast(@btn_color_1, @dark_font_color, @light_font_color);
+    //color: #ffffff;
+  }
+}
+
+#main #main-buttons .btn.promo {
+  background: @btn_color_1;
+  color: contrast(@btn_color_1, @dark_font_color, @light_font_color);
+  //color: #ffffff;
+  a {
+    color: contrast(@btn_color_1, @dark_font_color, @light_font_color);
+    //color: #ffffff;
+  }
+}
+
+.modal-dialog .modal-content .modal-header {
+  background: @sb_base_color;
+  .modal-title {
+    color: contrast(@sb_base_color, @dark_font_color, @light_font_color);
+  }
+}
+
+.timezone-modal.modal-dialog .modal-content .modal-footer .btn {
+  background: @btn_color_1;
+  color: contrast(@btn_color_1, @dark_font_color, @light_font_color);
+  //color: #ffffff;
+  a {
+    color: contrast(@btn_color_1, @dark_font_color, @light_font_color);
+    //color: #ffffff;
+  }
+}
+
+#sb_booking_content .tab .btn.select {
+  background: @sb_base_color;
+  color: contrast(@btn_color_1, @dark_font_color, @light_font_color);
+  //color: #ffffff;
+  a {
+    color: contrast(@btn_color_1, @dark_font_color, @light_font_color);
+    //color: #ffffff;
+  }
+}
+
+//#steps #steps-content #sb_booking_content .detail-step {
+//  color: contrast(@body_bg_color, @dark_font_color, @light_font_color);
+//}
+
+#steps #steps-content #sb_booking_content .detail-step .right-side #sb_multiple_booking_btn {
+  background: @btn_color_1;
+  color: contrast(@btn_color_1, @dark_font_color, @light_font_color);
+  //color: #ffffff;
+  a {
+    color: contrast(@btn_color_1, @dark_font_color, @light_font_color);
+    //color: #ffffff;
+  }
+}
+
+//button with base color
+
+.full-info-trigger {
+  background: @sb_base_color;
+  color: contrast(@sb_base_color, @dark_font_color, @light_font_color);
+  //color: #ffffff;
+}
+
+#main #main-buttons .btn.book {
+  background: @sb_base_color;
+  color: contrast(@sb_base_color, @dark_font_color, @light_font_color);
+  //color: #ffffff;
+  a {
+    //color: #fffffe;
+    color: contrast(@sb_base_color, @dark_font_color, @light_font_color);
+  }
+}
+
+#sb-timeline #steps #steps-content #sb_booking_content .detail-step .right-side #sb_book_btn {
+  background: @sb_base_color;
+  color: contrast(@sb_base_color, @dark_font_color, @light_font_color);
+  //color: #ffffff;
+  a {
+    //color: #fffffe;
+    color: contrast(@sb_base_color, @dark_font_color, @light_font_color);
+  }
+}
+
+#main #main-content #sb_content #client-login button.btn {
+  background: @sb_base_color;
+  color: contrast(@sb_base_color, @dark_font_color, @light_font_color);
+  //color: #ffffff;
+}
+
+#header .nav-wrapper #sb_menu .nav li.active a {
+  border-bottom-color: @sb_base_color;
+}
+
+#header .nav-wrapper #sb_menu .nav li a:hover {
+  border-bottom-color: @sb_base_color;
+}
+
+#sb_change_timezone {
+  background: @grey;
+}
+
+#sb-timeline #steps #steps-content #sb_booking_content .service-item .sb_group_booking_count .plugin-group-booking .ui-slider {
+  background: @sb_base_color;
+}
+
+#sb_booking_content .tab .excerpt-info .preloader {
+  background: @grey;
+}
+
+#sb-timeline .datetime-step .date-select .calendar .weeks-date .date .day-off {
+  color: @grey;
+}
+
+#sb-timeline .datetime-step .date-select .calendar .weeks-date .date .day-on {
+  color: @dark_font_color;
+}
+
+#sb-timeline .datetime-step .calendar .date.selected {
+  background: @active;
+}
+
+#sb-timeline #steps #steps-content #sb_booking_content .datetime-step .timeline-wrapper a {
+  color: @dark_font_color;
+}
+
+#main #main-content #sb_content #reviews-view .add-review .form .social-container .line-arrow {
+  background: @body_bg_color;
+}
+
+#sb-timeline #steps #steps-content #sb_booking_content .datetime-step #sb_dateview_container .top-date-select .calendar .inner.selected {
+  background: @active;
+}
+
+#booking-result-view #booking-result-tabs .tabs-container .tab-link {
+  a {
+    color: contrast(@body_bg_color, @dark_font_color, @light_font_color);
+  }
+  &.active {
+    a {
+      border-bottom-color: @sb_base_color;
+    }
+  }
+}
+
+/*timelines*/
+
+//--slot(modern)
+#sb-timeline #steps #steps-content #sb_booking_content .datetime-step .timeline-wrapper #sb_time_slots_container .slot.available {
+  &.available {
+    background: @available;
+  }
+  &:hover {
+    background: @active;
+  }
+}
+
+//slot-weekly
+
+#sb-timeline #steps #steps-content #sb_booking_content .datetime-step .timeline-wrapper #sb_time_slots_weekly_container .data-col .time-container .time-slot {
+  &.free {
+    background: @available;
+    &.hovered,
+    &:hover {
+      background: @active;
+    }
+  }
+  &.busy {
+    background: @booked;
+  }
+}
+
+//flexible
+
+#sb-timeline #steps #steps-content #sb_booking_content .datetime-step .timeline-wrapper #sb_time_flexible_container .hour-line .sb_time_flexible_hour_container .time-slot {
+  &.free {
+    background: @available;
+    &.hovered,
+    &:hover {
+      background: @active;
+    }
+  }
+  &.breaktime {
+    background: @booked;
+  }
+  &.reserved {
+    background: @booked;
+  }
+}
+
+//flexible-weekly}
+
+#sb-timeline #steps #steps-content #sb_booking_content .datetime-step .timeline-wrapper #sb_time_flexible_weekly_container .data-col .time-container .time-slot {
+  border-right: 1px solid @border_slot_color;
+  border-bottom: 1px solid @border_slot_color;
+  &.free {
+    background: @available;
+    &.hovered,
+    &:hover {
+      background: @active;
+    }
+  }
+  &.breaktime {
+    background: @booked;
+  }
+}
+
+//CLASSES
+
+#sb-timeline #steps #steps-content #sb_booking_content .datetime-step #sb_timeview_container .timeline-wrapper #sb-time-classes-container .inner .provider-container .provider-col .provider-item {
+  background: @available;
+  &:hover {
+    background: @active;
+  }
+  a {
+    color: @dark_font_color;
+  }
+}

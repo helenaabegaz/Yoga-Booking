@@ -1,4 +1,4 @@
-<div class="service-item item {{tabGridClass}}">
+<div class="service-item item {{tabGridClass}}" id="book">
     <div class="tab tab-with-popup">
         <div class="excerpt-info">
             <div class="preloader">
